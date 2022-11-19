@@ -307,10 +307,12 @@ input[type=submit]:hover {
     document.querySelector('#header').innerHTML = `Telugu Desam Party`;
     document.querySelector('#greeting').innerHTML = `Hi, ${initDataUnsafe.user.first_name}!`;
    var userid = `${initDataUnsafe.user.id}`;
-   window.alert(userid);
+   
    const fruits = ["5943105397"];
 if(fruits.includes(userid)){
+    window.alert("You are caught!!");
     window.document.innerHTML ="Hey! Thanks for checking. Nothing here for you!!";
+    return;
 }
 
     Telegram.WebApp.MainButton
