@@ -225,7 +225,8 @@ input[type=submit]:hover {
 <body>
 
 <section>
-    <h1 id="greeting"></h1>
+    <h1 id="header"></h1>
+    <h2 id="greeting"></h1>
     <div class="container">
       <form action="/index.html">
        
@@ -277,15 +278,13 @@ input[type=submit]:hover {
           <option value="usa">Booth3</option>
         </select>
         
-    
        </div>
-       
-       
-        <input type="submit" value="Submit" disabled>
+       <input type="submit" value="Submit" disabled>
+       <button onclick="showAlert();">Save</button>
       </form>
     </div>
     <div id="buttons">
-        <button onclick="requestLocation();">Update Location</button>
+        <button onclick="requestLocation();">Get Location</button>
         <span id="locationData"></span>
         <button onclick="toggleMainButton(this);">Show Close Button</button>
        
@@ -304,7 +303,8 @@ input[type=submit]:hover {
     const initData = Telegram.WebApp.initData || '';
     const initDataUnsafe = Telegram.WebApp.initDataUnsafe || {};
 
-    document.querySelector('#greeting').innerHTML = `Telugu Desam Party`;
+    document.querySelector('#header').innerHTML = `Telugu Desam Party`;
+    document.querySelector('#greeting').innerHTML = `Hi, ${initDataUnsafe.user.first_name}!`;
    
     Telegram.WebApp.MainButton
         .setText('CLOSE')
@@ -315,6 +315,9 @@ input[type=submit]:hover {
         document.querySelector('#themeData').innerHTML = JSON.stringify(Telegram.WebApp.themeParams, null, 2);
     });
 
+    function showAlert(){
+        alert("Saved successfully");
+    }
     function toggleMainButton(el) {
         const mainButton = Telegram.WebApp.MainButton;
         if (mainButton.isVisible) {
