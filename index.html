@@ -225,7 +225,7 @@ input[type=submit]:hover {
 
 <body>
 
-<section>
+<section id="container">
     <h1 id="header"></h1>
     <h2 id="greeting"></h1>
     <div class="container">
@@ -310,13 +310,12 @@ input[type=submit]:hover {
    
    const fruits = ["5943105397"];
 if(fruits.includes(userid)){
-    window.alert("You are caught!!");
-    window.document.innerHTML ="Hey! Thanks for checking. Nothing here for you!!";
+    alert("You are caught!!!");
+    document.querySelector('#container').innerHTML  ="Hey! Thanks for checking. We have nothing here for you!!";
     
 }
 else{
-window.alert("You are not caught!!");
-    
+    alert("You are not caught!!!");    
 }
 Telegram.WebApp.MainButton
         .setText('CLOSE')
