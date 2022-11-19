@@ -74,12 +74,12 @@ input[type=submit]:hover {
 
         button {
             display: block;
-            width: 100%;
+            width: 50%;
             font-size: 14px;
             margin: 15px 0;
             padding: 15px 8px;
-            margin-left: 5 px;
-            margin-right: 5px;;
+            margin-left: 25pc;
+            
             border: none;
             border-radius: 4px;
             background-color: hsla(205, 59%, 57%, 0.806);
@@ -279,9 +279,10 @@ input[type=submit]:hover {
         </select>
         
        </div>
-       <input type="submit" value="Submit" disabled>
-       <button onclick="showAlert();">Save</button>
+      
+      
       </form>
+      <button onclick="showAlert();">Save</button>
     </div>
     <div id="buttons">
         <button onclick="requestLocation();">Get Location</button>
@@ -316,7 +317,17 @@ input[type=submit]:hover {
     });
 
     function showAlert(){
-        alert("Saved successfully");
+        var location;
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function (position) {
+                location= 'Your coordinates are: (' + position.coords.latitude + ', ' + position.coords.longitude + ')';
+            });
+        } else {
+            location = 'Your coordinates are: (Geolocation is not supported in this browser)';
+        }
+        var msg = `Dear ${initDataUnsafe.user.first_name}!, your details are saved successfully.`;
+
+        alert(msg);
     }
     function toggleMainButton(el) {
         const mainButton = Telegram.WebApp.MainButton;
