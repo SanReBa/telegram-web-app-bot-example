@@ -82,8 +82,7 @@ input[type=submit]:hover {
             background-color: hsla(205, 59%, 57%, 0.806);
             color: var(--tg-theme-button-text-color, #ec4545);
             cursor: pointer;
-            
-           
+            margin-top: 5px;
         }
 
         button[disabled] {
@@ -284,14 +283,13 @@ input[type=submit]:hover {
       
       
       </form>
-      <button onclick="showAlert();">Save</button>
+     
     </div>
     <div id="buttons">
         <button onclick="requestLocation();">Get Location</button>
         <span id="locationData"></span>
-        <button onclick="toggleMainButton(this);">Show Close Button</button>
+        <button onclick="showAlert();">Save</button>
        
-        <button id="btnTime" onclick="sendTime(10);">Send time</button>
         
     </div>
 
@@ -319,14 +317,7 @@ input[type=submit]:hover {
     });
 
     function showAlert(){
-        var location;
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function (position) {
-                location= 'Your coordinates are: (' + position.coords.latitude + ', ' + position.coords.longitude + ')';
-            });
-        } else {
-            location = 'Your coordinates are: (Geolocation is not supported in this browser)';
-        }
+       
         var msg = `Dear ${initDataUnsafe.user.first_name}!, your details are saved successfully.`;
 
         alert(msg);
