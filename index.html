@@ -20,6 +20,43 @@
 
     </script>
     <style>
+
+input[type=text], select, textarea {
+  width: 49%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 3px;
+  margin-left: 1px;
+  margin-right: 1px;
+  margin-bottom: 3px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+  
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #fbc928;
+  padding: 23px;
+}
+.formdiv input{
+  float:left;
+}
+
         body {
             font-family: sans-serif;
             background: #fbc928;
@@ -183,7 +220,66 @@
 
 <section>
     <h1 id="greeting"></h1>
+    <h3>Contact Form</h3>
 
+    <div class="container">
+      <form action="/action_page.php">
+       
+       <div class="formdiv" > 
+       
+        <select id="state" name="state">
+          <option value="" disabled selected hidden>Select State</option>
+          <option value="australia">Andhra Pradesh</option>
+         
+        </select>
+       
+       
+       <select id="constituency" name="constituency">
+        <option value="" disabled selected hidden>Select Constituency</option>
+          <option value="australia">Mangalagiri</option>
+          <option value="canada">Gudivada</option>
+          <option value="usa">Thirupathi</option>
+        </select>
+        
+        
+        <select id="mandal" name="mandal">
+        <option value="" disabled selected hidden>Select Mandal</option>
+          <option value="australia">Mangalagiri</option>
+          <option value="canada">Gudivada</option>
+          <option value="usa">Thirupathi</option>
+        </select>
+        
+        <select id="muncipality" name="muncipality">
+        <option value="" disabled selected hidden>Select Muncipality</option>
+          <option value="australia">Mangalagiri</option>
+          <option value="canada">Gudivada</option>
+          <option value="usa">Thirupathi</option>
+        </select>
+        
+        
+        
+        
+        <select id="village" name="village">
+        <option value="" disabled selected hidden>Select Village</option>
+          <option value="australia">Village1</option>
+          <option value="canada">Village2</option>
+          <option value="usa">Village3</option>
+        </select>
+        
+        <select id="booth" name="booth">
+        <option value="" disabled selected hidden>Select Booth</option>
+          <option value="australia">Booth1</option>
+          <option value="canada">Booth2</option>
+          <option value="usa">Booth3</option>
+        </select>
+        
+    
+       </div>
+       
+       
+        <input type="submit" value="Submit">
+      </form>
+    </div>
     <div id="buttons">
         <button onclick="webviewExpand();">Update Location</button>
         <small>(The window goes fullscreen)</small>
