@@ -285,8 +285,8 @@ input[type=submit]:hover {
       </form>
     </div>
     <div id="buttons">
-        <button onclick="webviewExpand();">Update Location</button>
-       
+        <button onclick="requestLocation();">Update Location</button>
+        <div id="locationData"></div>
         <button onclick="toggleMainButton(this);">Show Close Button</button>
        
         <button id="btnTime" onclick="sendTime(10);">Send time</button>
@@ -340,7 +340,7 @@ input[type=submit]:hover {
     function requestLocation() {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function (position) {
-                document.querySelector('#locationData').innerHTML = '(' + position.coords.latitude + ', ' + position.coords.longitude + ')';
+                document.querySelector('#locationData').innerHTML = 'Your location coordinates are: (' + position.coords.latitude + ', ' + position.coords.longitude + ')';
             });
         } else {
             document.querySelector('#locationData').innerHTML = '(Geolocation is not supported in this browser)';
