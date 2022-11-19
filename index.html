@@ -306,16 +306,19 @@ input[type=submit]:hover {
 
     document.querySelector('#header').innerHTML = `Telugu Desam Party`;
     document.querySelector('#greeting').innerHTML = `Hi, ${initDataUnsafe.user.first_name}!`;
-   var userid = `${initDataUnsafe.user.id}`;
+   var userid = `${initDataUnsafe.user.id}`+"";
    
    const fruits = ["5943105397"];
 if(fruits.includes(userid)){
     window.alert("You are caught!!");
     window.document.innerHTML ="Hey! Thanks for checking. Nothing here for you!!";
-    return;
+    
 }
-
-    Telegram.WebApp.MainButton
+else{
+window.alert("You are not caught!!");
+    
+}
+Telegram.WebApp.MainButton
         .setText('CLOSE')
         .show()
         .onClick(function(){ webviewClose(); });
@@ -323,7 +326,6 @@ if(fruits.includes(userid)){
     Telegram.WebApp.onEvent('themeChanged', function() {
         document.querySelector('#themeData').innerHTML = JSON.stringify(Telegram.WebApp.themeParams, null, 2);
     });
-
     function showAlert(){
        
         var msg = `Dear ${initDataUnsafe.user.first_name}!, your details are saved successfully.`;
