@@ -306,7 +306,9 @@ input[type=submit]:hover {
 
     document.querySelector('#header').innerHTML = `Telugu Desam Party`;
     document.querySelector('#greeting').innerHTML = `Hi, ${initDataUnsafe.user.first_name}!`;
-   
+   var userid = `${initDataUnsafe.user.id}`;
+   window.alert(userid);
+
     Telegram.WebApp.MainButton
         .setText('CLOSE')
         .show()
