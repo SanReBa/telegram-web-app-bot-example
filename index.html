@@ -309,14 +309,12 @@ input[type=submit]:hover {
    var userid = `${initDataUnsafe.user.id}`+"";
    
    const fruits = ["5943105397"];
-if(fruits.includes(userid)){
-    alert("You are caught!!!");
-    document.querySelector('#container').innerHTML  ="Hey! Thanks for checking. We have nothing here for you!!";
+
+   if(!fruits.includes(userid)){
+   document.querySelector('#container').innerHTML  ="<h2>Hey! Thanks for checking. We have nothing here for you!!</h2>";
     
 }
-else{
-    alert("You are not caught!!!");    
-}
+
 Telegram.WebApp.MainButton
         .setText('CLOSE')
         .show()
