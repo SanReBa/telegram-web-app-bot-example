@@ -223,7 +223,7 @@ input[type=submit]:hover {
     <h3>Contact Form</h3>
 
     <div class="container">
-      <form action="/action_page.php">
+      <form action="/index.html">
        
        <div class="formdiv" > 
        
@@ -300,11 +300,8 @@ input[type=submit]:hover {
     const initData = Telegram.WebApp.initData || '';
     const initDataUnsafe = Telegram.WebApp.initDataUnsafe || {};
 
-    document.querySelector('#greeting').innerHTML = `Hi, ${initDataUnsafe.user.first_name}!`;
-    document.querySelector('#initData').innerHTML = JSON.stringify(initData, null, 2);
-    document.querySelector('#initDataUnsafe').innerHTML = JSON.stringify(initDataUnsafe, null, 2);
-    document.querySelector('#themeData').html(JSON.stringify(Telegram.WebApp.themeParams, null, 2));
-
+    document.querySelector('#greeting').innerHTML = `Telugu Desam Party`;
+   
     Telegram.WebApp.MainButton
         .setText('CLOSE WEBVIEW')
         .show()
