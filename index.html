@@ -282,9 +282,9 @@ input[type=submit]:hover {
     </div>
     <div id="buttons">
         <button onclick="webviewExpand();">Update Location</button>
-        <small>(The window goes fullscreen)</small>
+       
         <button onclick="toggleMainButton(this);">Hide Main Button</button>
-        <small>(It hides/shows main button)</small>
+       
         <button id="btnTime" onclick="sendTime(10);">Send time</button>
         
     </div>
@@ -303,7 +303,7 @@ input[type=submit]:hover {
     document.querySelector('#greeting').innerHTML = `Telugu Desam Party`;
    
     Telegram.WebApp.MainButton
-        .setText('CLOSE WEBVIEW')
+        .setText('CLOSE')
         .show()
         .onClick(function(){ webviewClose(); });
 
